@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Timer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZkY-UN-cGU">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="analog-clock.jpeg" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IaZ-eh-hFF">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="541"/>
+                                        <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                        <variation key="heightClass=compact" image="digital-clock.png"/>
+                                    </imageView>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EgW-YV-M6v">
+                                        <rect key="frame" x="0.0" y="549" width="414" height="216"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" updatesFrequently="YES"/>
+                                        </accessibility>
+                                    </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qA-D5-cNq">
+                                        <rect key="frame" x="0.0" y="773" width="414" height="45"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <state key="normal" title="Começar">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="comecar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dnA-cI-Qaa"/>
+                                            <segue destination="cL6-Qb-ANu" kind="show" id="iPe-Sz-drP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <variation key="heightClass=compact" axis="horizontal"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZkY-UN-cGU" secondAttribute="bottom" id="8QH-n6-b60"/>
+                            <constraint firstItem="ZkY-UN-cGU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8Zc-VA-vcM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZkY-UN-cGU" secondAttribute="trailing" id="JGh-nG-Z4a"/>
+                            <constraint firstItem="ZkY-UN-cGU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qgN-If-4K1"/>
+                            <constraint firstItem="ZkY-UN-cGU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vrL-pc-z5L"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="segundos" destination="EgW-YV-M6v" id="v4o-bC-6y3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="75.669642857142847"/>
+        </scene>
+        <!--Timer View Controller-->
+        <scene sceneID="8Ms-Il-NiJ">
+            <objects>
+                <viewController storyboardIdentifier="timerScreen" modalTransitionStyle="flipHorizontal" id="cL6-Qb-ANu" customClass="TimerViewController" customModule="Timer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y8o-Ll-XHR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bmS-dd-ait">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="analog-clock.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="WTp-wp-80V">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="703.5"/>
+                                        <variation key="heightClass=compact" image="digital-clock.png"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2a-lV-VTj">
+                                        <rect key="frame" x="0.0" y="703.5" width="414" height="64.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="54"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWX-MM-VJk">
+                                        <rect key="frame" x="0.0" y="768" width="414" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <state key="normal" title="Encerrar">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="encerrar:" destination="cL6-Qb-ANu" eventType="touchUpInside" id="HE9-rS-ME7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <variation key="heightClass=compact" axis="horizontal"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="crB-Ki-7ST"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="crB-Ki-7ST" firstAttribute="bottom" secondItem="bmS-dd-ait" secondAttribute="bottom" id="0QE-op-lPx"/>
+                            <constraint firstItem="crB-Ki-7ST" firstAttribute="trailing" secondItem="bmS-dd-ait" secondAttribute="trailing" id="AsH-wl-LTy"/>
+                            <constraint firstItem="bmS-dd-ait" firstAttribute="top" secondItem="crB-Ki-7ST" secondAttribute="top" id="YsH-I4-XfC"/>
+                            <constraint firstItem="bmS-dd-ait" firstAttribute="leading" secondItem="crB-Ki-7ST" secondAttribute="leading" id="pye-hD-5Xz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="uwF-E8-hmb"/>
+                    <connections>
+                        <outlet property="visor" destination="U2a-lV-VTj" id="mWe-5K-BBr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yiK-py-mpb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="734" y="73"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="analog-clock.jpeg" width="1200" height="1525"/>
+        <image name="digital-clock.png" width="409.60000610351562" height="409.60000610351562"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
